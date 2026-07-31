@@ -48,3 +48,82 @@ It combines **Retrieval-Augmented Generation (RAG)**, **LLMs**, and **voice inte
 ---
 
 ## 🏗️ Project Structure
+├── app.py                # Main Streamlit app
+├── interview_engine.py   # RAG-based question generation
+├── rag_engine.py         # Chunking + embeddings + retrieval
+├── rag_pipeline.py       # Knowledge-based Q&A (optional RAG)
+├── resume_parser.py      # Extract text from PDF
+├── resume_analyzer.py    # Resume insights
+├── evaluation.py         # Answer evaluation
+├── voice_module.py       # Voice recording + STT + TTS
+├── data/
+│   └── interview_qa.txt  # Knowledge base
+├── .env                  # API keys
+
+## 🧠 How RAG Works in This Project
+
+1. Resume is split into chunks
+2. Chunks are converted into embeddings
+3. Stored in FAISS vector database
+4. Relevant chunks are retrieved based on role
+5. LLM generates questions using retrieved context
+
+👉 This ensures:
+
+* No generic questions
+* Fully personalized interview
+
+---
+
+## 🎯 Usage Flow
+
+1. Upload your resume
+2. Analyze resume (optional)
+3. Select job role
+4. Start interview
+5. Answer via text or voice
+6. Get feedback + final report
+
+---
+
+## 📸 Example Output
+
+* “Can you explain your experience with machine learning models in your project?”
+* “How did you optimize performance in your application?”
+
+👉 Questions are tailored to your resume
+
+---
+
+## ⚠️ Notes
+
+* First run may take time (model download)
+* Voice feature works best with microphone enabled
+* Whisper runs on CPU (may be slightly slow)
+
+---
+
+## 💡 Future Improvements
+
+* Add real-time feedback during answers
+* Improve scoring accuracy
+* Add more domain-specific question banks
+* Deploy on cloud (Streamlit Cloud / AWS)
+
+---
+
+## 🙌 Acknowledgements
+
+* Sentence Transformers
+* FAISS
+* Groq API
+* Open-source AI community
+
+---
+
+## 📌 Author
+
+**Vinay Sharma**
+AI & Data Enthusiast
+
+---
